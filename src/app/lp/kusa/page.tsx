@@ -95,16 +95,6 @@ export default function GrassCuttingLP() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-l from-transparent to-[#f0f9f0]/40 lg:to-transparent"></div>
               </div>
-
-              {/* CEO Portrait Overlapping */}
-              <div className="absolute -bottom-6 right-4 sm:-bottom-10 sm:right-10 w-[120px] h-[120px] sm:w-[200px] sm:h-[200px] rounded-full border-[4px] sm:border-[8px] border-white shadow-2xl overflow-hidden z-20 bg-white">
-                <Image 
-                  src="/images/ceo-portrait.jpg" 
-                  alt="代表 伊藤" 
-                  fill 
-                  className="object-cover"
-                />
-              </div>
             </div>
           </div>
         </div>
@@ -128,13 +118,13 @@ export default function GrassCuttingLP() {
             <div className="w-48 h-48 relative rounded-full overflow-hidden border-4 border-green-600 shadow-lg flex-shrink-0">
               <Image 
                 src="/images/ceo-portrait.jpg" 
-                alt="お茶の間レスキュー隊 伊藤" 
+                alt="お茶の間レスキュー隊" 
                 fill 
                 className="object-cover"
               />
             </div>
             <div>
-              <h2 className="text-3xl font-bold mb-4 text-slate-800">{greeting}</h2>
+              <h2 className="text-3xl font-bold mb-4 text-slate-800">こんにちは、お茶の間レスキュー隊です。</h2>
               <p className="text-lg leading-relaxed mb-4 text-slate-600 font-medium">
                 「暑くて作業ができない」「腰が痛くて」「忙しくて手が回らない」など、どんな理由でも構いません。お庭の雑草でお困りの際は、私たちにお任せください！
               </p>
@@ -154,14 +144,23 @@ export default function GrassCuttingLP() {
             分かりやすい料金設定
           </h2>
           <div className="bg-white rounded-3xl p-8 md:p-12 shadow-xl border-2 border-orange-200">
-            <p className="text-xl font-bold text-orange-600 mb-4">基本作業費（1名あたり）</p>
+            <p className="text-xl font-bold text-orange-600 mb-4">基本作業費（1時間あたり）</p>
             <div className="text-center mb-8">
               <span className="text-6xl md:text-7xl font-black text-slate-800 tracking-tight">4,500<span className="text-3xl font-extrabold">円〜/時</span></span>
             </div>
-            <ul className="text-slate-600 space-y-4 text-left max-w-md mx-auto font-medium">
+            <ul className="text-slate-600 space-y-4 text-left max-w-lg mx-auto font-medium">
               <li className="flex items-start gap-3"><span className="text-orange-500 text-xl font-bold">✓</span> 作業時間・面積に応じて事前にお見積り</li>
               <li className="flex items-start gap-3"><span className="text-orange-500 text-xl font-bold">✓</span> 草の処分費は別途（持ち帰りご希望の場合）</li>
-              <li className="flex items-start gap-3"><span className="text-orange-500 text-xl font-bold">✓</span> 出張費無料エリア：新潟市・聖籠町・新発田市</li>
+              <li className="flex items-start gap-3">
+                <span className="text-orange-500 text-xl font-bold">✓</span> 
+                <span>
+                  出張費無料エリア：新潟市・聖籠町・新発田市<br/>
+                  <span className="text-sm text-slate-500">その他の近隣の市はお問い合わせくだされば、無料見積もり致します！</span>
+                </span>
+              </li>
+              <li className="flex items-start gap-3 pt-4 border-t border-slate-100">
+                <span className="text-slate-800 font-bold">詳しいお見積りは担当者より説明いたします！</span>
+              </li>
             </ul>
           </div>
         </div>
