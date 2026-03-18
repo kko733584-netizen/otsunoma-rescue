@@ -1,192 +1,175 @@
-import { Button } from "@/components/ui/Button";
-import Link from "next/link";
+import { Metadata } from 'next';
+import Image from 'next/image';
+import Link from 'next/link';
+import { Button } from '@/components/ui/Button';
+
+export const metadata: Metadata = {
+  title: '新潟市の草刈り・草むしりは「お茶の間レスキュー隊」へ！最短即日・お見積り無料',
+  description: '新潟市の草刈り、草取りなどはお茶の間レスキュー隊にお任せください！最短即日対応、無料見積り、明朗会計で安心の実績。',
+};
 
 export default function KSPage() {
+  const phoneNumber = '080-9972-2393';
+  const telLink = 'tel:08099722393';
+  const greeting = 'こんにちは、お茶の間レスキュー隊伊藤です。';
+
+  const reviews = [
+    {
+      name: 'トシ 様',
+      text: '急ですがタイヤ交換をお願いしました。前の大雪時にも雪かきが間に合わず困っていたところ、本当に助けていただきました。スピーディーなのに丁寧で、仕上がりも大満足です。'
+    },
+    {
+      name: '田口岬 様',
+      text: 'お話を聞かせて頂き、活気あふれる心温まる大変良い方で、街の人々のお困り事のために県内どこまでも東奔西走されています。応援しています。'
+    },
+    {
+      name: '市毛幸喜 様',
+      text: '部屋の片付けを頼みました。事前にYoutubeなどでお顔を拝見してたので安心して依頼できました。仕事も会話もテキパキとした好青年という印象でした。'
+    },
+    {
+      name: 'たか 様',
+      text: '車のタイヤ交換をお願いしました。ガソリンスタンド勤務ということもありとても手際のいい作業でした。'
+    },
+    {
+      name: '小武樹 様',
+      text: 'パンクした為、急遽連絡して対応していただけたので、大変助かりました！作業も早く最後の仕上げも一緒に確認してもらえたので安心です！'
+    }
+  ];
+
   return (
-    <div className="w-full flex-grow flex flex-col pt-0">
-      <div className="w-full bg-slate-900 pt-16 pb-12 mb-12 border-b-4 border-orange-500">
-        <div className="container mx-auto px-4 text-center animate-fade-in-up">
-          <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-6">
-            <span className="drop-shadow-[0_0_15px_rgba(249,115,22,1)] mr-2">🌿</span>草刈り・剪定レスキュー
+    <div className="w-full flex-grow flex flex-col pt-0 font-sans">
+      
+      {/* Hero Section - Orange */}
+      <section className="w-full bg-orange-500 py-16 md:py-24 text-center text-white">
+        <div className="container mx-auto px-4">
+          <div className="inline-block mb-6 px-4 py-2 rounded-full bg-white text-orange-600 font-bold shadow-sm">
+            新潟市・聖籠町・新発田市 出張費無料！
+          </div>
+          <h1 className="text-4xl md:text-6xl font-extrabold mb-6 drop-shadow-md">
+            お庭の草刈りはお任せください！
           </h1>
-          <p className="text-slate-300 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed font-bold">
-            新潟市内の草刈り・草取りを最短即日で対応します！
+          <p className="text-xl md:text-2xl mb-10 font-medium">
+            最短即日対応。お見積り無料です。
           </p>
+          <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl inline-block mb-8">
+            <a href={telLink} className="text-2xl md:text-3xl font-bold flex items-center justify-center gap-2 hover:opacity-80 transition-opacity">
+              <span className="text-3xl">📞</span> {phoneNumber}
+            </a>
+          </div>
         </div>
-      </div>
+      </section>
 
-      <div className="container mx-auto px-4 max-w-4xl pb-24">
-        <div className="bg-white rounded-3xl shadow-sm border border-slate-100 overflow-hidden mb-12 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
-          <div className="p-8 md:p-12">
-
-            {/* Introduction and Pain Points */}
-            <div className="mb-12">
-              <p className="text-slate-700 text-lg leading-relaxed mb-6">
-                草刈りは、時間もかかるし、体にも負担がかかりがち。<br/>
-                無理する前に、私たちにお手伝いさせてください！<br/>
-                ご自宅のお庭や空き家・店舗・駐車場・通路など、草刈り・草むしりのご相談もどうぞ。<br/>
-                場所により、草刈機・のこがまなどで対応しますので、まずはお気軽にご連絡ください♪
+      {/* Greeting Section - Green */}
+      <section className="py-16 bg-green-600 text-white">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="flex flex-col md:flex-row items-center gap-10">
+            <div className="w-48 h-48 relative rounded-full overflow-hidden border-4 border-white shadow-lg flex-shrink-0">
+              <Image 
+                src="/images/ceo-portrait.jpg" 
+                alt="お茶の間レスキュー隊 伊藤" 
+                fill 
+                className="object-cover"
+              />
+            </div>
+            <div>
+              <h2 className="text-3xl font-bold mb-4">{greeting}</h2>
+              <p className="text-lg leading-relaxed mb-4">
+                お庭の雑草でお困りではありませんか？「暑くて作業ができない」「腰が痛くて」「忙しくて手が回らない」など、どんな理由でも構いません。私たちが責任を持って、あなたのお庭をスッキリ綺麗に仕上げます！
               </p>
-
-              <div className="bg-slate-50 p-8 rounded-2xl border border-slate-200">
-                <h3 className="text-xl font-bold text-slate-800 mb-6 text-center border-b border-slate-200 pb-4">こんなことでお困りの方にオススメです</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  <div>
-                    <h4 className="font-bold text-orange-700 mb-2">草刈りしたい気持ちはあるけど…</h4>
-                    <ul className="space-y-3 text-slate-600 text-sm">
-                      <li className="flex items-start gap-2"><span className="text-orange-500">✔</span>腰や腕が痛くなりそうで不安…</li>
-                      <li className="flex items-start gap-2"><span className="text-orange-500">✔</span>毎年やってはいるけど年々しんどくなってきた…</li>
-                      <li className="flex items-start gap-2"><span className="text-orange-500">✔</span>庭の草刈りが地味にきつい…</li>
-                      <li className="flex items-start gap-2"><span className="text-orange-500">✔</span>毎日の草むしりで、体力がじわじわ削られる…</li>
-                      <li className="flex items-start gap-2"><span className="text-orange-500">✔</span>家族が高齢で、長い時間草刈りができない…</li>
-                    </ul>
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-orange-700 mb-2">こんなご要望にも！</h4>
-                    <ul className="space-y-3 text-slate-600 text-sm">
-                      <li className="flex items-start gap-2"><span className="text-orange-500">✔</span>広い範囲の草刈りを一人でやりたくない</li>
-                      <li className="flex items-start gap-2"><span className="text-orange-500">✔</span>暑くなる前に草を片付けておきたい</li>
-                      <li className="flex items-start gap-2"><span className="text-orange-500">✔</span>自分では草刈りする時間がないから任せたい</li>
-                      <li className="flex items-start gap-2"><span className="text-orange-500">✔</span>玄関前や通路を安全にしたい</li>
-                    </ul>
-                  </div>
-                </div>
-                <div className="mt-6 text-center text-slate-700 font-bold bg-white p-4 rounded-xl shadow-sm border border-slate-100">
-                  <p>「暑い中での草刈りが大変」「無理せず家のことを優先したい」<br/>そんな方にぴったりです！</p>
-                </div>
+              <div className="bg-white/20 p-4 rounded-xl border border-white/30">
+                <p className="font-bold">【強み】ガソリンスタンドでの7年間の勤務経験あり</p>
+                <p className="text-sm mt-1 opacity-90">手際の良さと丁寧な対応には自信があります！体力仕事もお任せください。</p>
               </div>
-            </div>
-
-            {/* Pricing Section */}
-            <div className="mb-12 bg-orange-50 p-6 md:p-8 rounded-2xl border border-orange-100">
-               <h3 className="text-2xl font-bold text-slate-800 mb-6 text-center">草刈りの料金</h3>
-               <p className="text-center text-slate-600 mb-6">基本料金はこちらです。</p>
-               
-               <div className="max-w-md mx-auto bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden mb-6">
-                 <table className="w-full">
-                   <tbody className="divide-y divide-slate-100">
-                     <tr className="hover:bg-slate-50">
-                       <td className="px-6 py-4 font-medium text-slate-800 border-r border-slate-100 text-center">1時間</td>
-                       <td className="px-6 py-4 text-orange-600 font-bold text-xl text-center">4,500円</td>
-                     </tr>
-                     <tr className="hover:bg-slate-50">
-                       <td className="px-6 py-4 font-medium text-slate-800 border-r border-slate-100 text-center">2時間</td>
-                       <td className="px-6 py-4 text-orange-600 font-bold text-xl text-center">9,000円</td>
-                     </tr>
-                     <tr className="hover:bg-slate-50">
-                       <td className="px-6 py-4 font-medium text-slate-800 border-r border-slate-100 text-center">3時間</td>
-                       <td className="px-6 py-4 text-orange-600 font-bold text-xl text-center">13,500円</td>
-                     </tr>
-                     <tr className="hover:bg-slate-50">
-                       <td className="px-6 py-4 font-medium text-slate-800 border-r border-slate-100 text-center">4時間</td>
-                       <td className="px-6 py-4 text-orange-600 font-bold text-xl text-center">18,000円</td>
-                     </tr>
-                   </tbody>
-                 </table>
-               </div>
-               
-               <div className="text-center text-slate-700">
-                 <p className="font-bold mb-2">4時間以上のご依頼もお待ちしています！</p>
-                 <p className="text-sm">複数名のスタッフで作業もできますのでお問い合わせください♪</p>
-               </div>
-            </div>
-
-            {/* Video Examples */}
-            <div className="mb-12">
-              <h3 className="text-2xl font-bold text-slate-800 mb-6 text-center border-b border-slate-200 pb-4">草刈り実際の作業例</h3>
-              <p className="text-center text-slate-600 mb-8">こちらが作業風景です！ご参考にしてみてください♪</p>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="flex flex-col">
-                  <h4 className="font-bold text-slate-800 mb-3 ml-2">新潟市のお庭の草刈り</h4>
-                  <div className="aspect-video rounded-2xl overflow-hidden bg-slate-100 shadow-sm border border-slate-200 mb-3">
-                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/ExU65iPx7TU" title="草刈り作業例" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-                  </div>
-                  <p className="text-slate-600 text-sm italic ml-2">手刈りで作業させていただきました♪</p>
-                </div>
-                
-                <div className="flex flex-col">
-                  <h4 className="font-bold text-slate-800 mb-3 ml-2">新潟市北区の生垣剪定作業</h4>
-                  <div className="aspect-video rounded-2xl overflow-hidden bg-slate-100 shadow-sm border border-slate-200 mb-3">
-                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/6W2P_mogFjk" title="剪定作業例" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-                  </div>
-                  <p className="text-slate-600 text-sm italic ml-2">バリカンを使用して生垣の整理をしました♪</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Flow Section */}
-            <div className="mb-10 p-6 md:p-8 border-2 border-slate-100 rounded-3xl">
-               <h3 className="text-2xl font-bold text-slate-800 mb-8 text-center">お問い合わせから当日までの流れ</h3>
-               <div className="space-y-6">
-                 
-                 <div className="flex gap-4">
-                   <div className="flex flex-col items-center">
-                     <div className="w-10 h-10 rounded-full bg-orange-500 text-white flex items-center justify-center font-bold text-lg flex-shrink-0">1</div>
-                     <div className="w-0.5 h-full bg-orange-200 my-2"></div>
-                   </div>
-                   <div className="pb-6">
-                     <h4 className="font-bold text-lg text-slate-800 mb-2">お問い合わせ・ご相談</h4>
-                     <p className="text-slate-600">お電話またはお問い合わせフォームからご連絡ください。「玄関前だけ」「お庭の草を片付けたい」など、ざっくりした内容でも大丈夫です。</p>
-                   </div>
-                 </div>
-
-                 <div className="flex gap-4">
-                   <div className="flex flex-col items-center">
-                     <div className="w-10 h-10 rounded-full bg-orange-500 text-white flex items-center justify-center font-bold text-lg flex-shrink-0">2</div>
-                     <div className="w-0.5 h-full bg-orange-200 my-2"></div>
-                   </div>
-                   <div className="pb-6">
-                     <h4 className="font-bold text-lg text-slate-800 mb-2">日程調整・お見積もり</h4>
-                     <p className="text-slate-600">作業内容や場所をお伺いし、ご希望の日時や作業範囲を確認の上、作業可能な日時と料金の目安をお伝えします。<br/><span className="text-orange-600 text-sm">※この時点では料金は発生しません。</span></p>
-                   </div>
-                 </div>
-
-                 <div className="flex gap-4">
-                   <div className="flex flex-col items-center">
-                     <div className="w-10 h-10 rounded-full bg-orange-500 text-white flex items-center justify-center font-bold text-lg flex-shrink-0">3</div>
-                     <div className="w-0.5 h-full bg-orange-200 my-2"></div>
-                   </div>
-                   <div className="pb-6">
-                     <h4 className="font-bold text-lg text-slate-800 mb-2">当日作業</h4>
-                     <p className="text-slate-600">ご予約日時に現地へ伺い、ご要望に沿って丁寧に作業を行います。作業後の確認も行いますので、安心してお任せください。</p>
-                   </div>
-                 </div>
-
-                 <div className="flex gap-4">
-                   <div className="flex flex-col items-center">
-                     <div className="w-10 h-10 rounded-full bg-orange-500 text-white flex items-center justify-center font-bold text-lg flex-shrink-0">4</div>
-                   </div>
-                   <div>
-                     <h4 className="font-bold text-lg text-slate-800 mb-2">完了確認・お支払い</h4>
-                     <p className="text-slate-600">作業内容をご確認いただき、問題がなければ完了です。お支払い方法についても、事前にご案内いたします。</p>
-                   </div>
-                 </div>
-
-               </div>
-               <div className="mt-8 text-center bg-orange-50 py-4 px-6 rounded-xl border border-orange-100">
-                 <p className="font-bold text-orange-800">お庭の草の状況やスケジュールによっては、即日対応も可能です。<br/>まずはお気軽にご相談ください。</p>
-               </div>
-            </div>
-            
-            <div className="text-center flex flex-col sm:flex-row justify-center gap-4">
-              <Button size="lg" className="w-full sm:w-auto px-12" asChild>
-                <Link href="/contact">草刈り・剪定を依頼・相談する</Link>
-              </Button>
             </div>
           </div>
         </div>
+      </section>
 
-        <div className="text-center">
-          <Link href="/" className="text-orange-600 hover:text-orange-700 font-semibold transition-colors flex items-center justify-center gap-2">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
-            </svg>
-            トップページへ戻る
-          </Link>
+      {/* Pricing Section - Orange */}
+      <section className="py-20 bg-orange-50">
+        <div className="container mx-auto px-4 max-w-4xl text-center">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-slate-800 mb-12">
+            分かりやすい料金設定
+          </h2>
+          <div className="bg-white rounded-3xl p-8 md:p-12 shadow-xl border-2 border-orange-200">
+            <p className="text-xl font-bold text-orange-600 mb-4">基本作業費（1名あたり）</p>
+            <div className="text-center mb-8">
+              <span className="text-6xl md:text-7xl font-black text-slate-800 tracking-tight">4,500<span className="text-3xl font-extrabold">円〜/時</span></span>
+            </div>
+            <ul className="text-slate-600 space-y-4 text-left max-w-md mx-auto font-medium">
+              <li className="flex items-start gap-3"><span className="text-orange-500 text-xl">✓</span> 作業時間・面積に応じて事前にお見積り</li>
+              <li className="flex items-start gap-3"><span className="text-orange-500 text-xl">✓</span> 草の処分費は別途（持ち帰りご希望の場合）</li>
+              <li className="flex items-start gap-3"><span className="text-orange-500 text-xl">✓</span> 出張費無料エリア：新潟市・聖籠町・新発田市</li>
+            </ul>
+          </div>
         </div>
+      </section>
 
-      </div>
+      {/* Videos Section - Green */}
+      <section className="py-20 bg-green-700 text-white">
+        <div className="container mx-auto px-4 max-w-5xl text-center">
+          <h2 className="text-3xl md:text-4xl font-extrabold mb-12">作業風景を動画でチェック</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="aspect-video rounded-3xl overflow-hidden bg-white/10 shadow-lg">
+              <iframe 
+                width="100%" 
+                height="100%" 
+                src="https://www.youtube.com/embed/ExU65iPx7TU" 
+                title="作業例1" 
+                frameBorder="0" 
+                allowFullScreen
+              ></iframe>
+            </div>
+            <div className="aspect-video rounded-3xl overflow-hidden bg-white/10 shadow-lg">
+              <iframe 
+                width="100%" 
+                height="100%" 
+                src="https://www.youtube.com/embed/6W2P_mogFjk" 
+                title="作業例2" 
+                frameBorder="0" 
+                allowFullScreen
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Reviews Section - Orange */}
+      <section className="py-20 bg-orange-100">
+        <div className="container mx-auto px-4 max-w-6xl text-center">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-slate-800 mb-12">お客様の声</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {reviews.map((review, i) => (
+              <div key={i} className="bg-white rounded-2xl p-6 text-left shadow-md flex flex-col">
+                <div className="text-yellow-400 mb-2">★★★★★</div>
+                <p className="font-bold mb-2">{review.name}</p>
+                <p className="text-slate-600 text-sm flex-grow mb-4 leading-relaxed">"{review.text}"</p>
+                <p className="text-[10px] text-slate-400 mt-auto border-t pt-2">Googleマップの口コミより引用</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Call to Action - Green background for the final push */}
+      <section className="py-24 bg-green-600 text-white text-center">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <h2 className="text-3xl md:text-5xl font-extrabold mb-8">まずはお気軽にお電話ください！</h2>
+          <a href={telLink} className="text-2xl md:text-4xl font-black mb-12 bg-white text-green-700 py-6 rounded-3xl shadow-2xl inline-block px-10 hover:bg-green-50 transition-colors">
+            📞 {phoneNumber}
+          </a>
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white text-xl py-8 px-12 rounded-2xl shadow-xl font-bold" asChild>
+              <Link href="/contact">メールでお問い合わせ</Link>
+            </Button>
+            <Button size="lg" className="bg-[#06C755] hover:bg-[#05b34c] text-white text-xl py-8 px-12 rounded-2xl shadow-xl font-bold" asChild>
+              <a href="https://line.me/R/ti/p/@271paqpi" target="_blank" rel="noopener noreferrer">LINEで相談する</a>
+            </Button>
+          </div>
+          <p className="mt-12 text-green-100 italic">「お茶の間レスキューのページを見た」とお伝えいただくとスムーズです。</p>
+        </div>
+      </section>
+
     </div>
   );
 }

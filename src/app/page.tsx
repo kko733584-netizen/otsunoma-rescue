@@ -137,7 +137,7 @@ export default function Home() {
             <ServiceCard 
               title="草刈り・剪定" 
               description="お庭のお手入れ、面倒な草刈りもスッキリきれいに！"
-              href="/services/kusa-sentei"
+              href="/kusa"
               icon="🌿"
             />
           </div>
