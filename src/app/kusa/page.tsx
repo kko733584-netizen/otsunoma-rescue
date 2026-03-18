@@ -150,7 +150,6 @@ export default function GrassCuttingPage() {
             </div>
             <ul className="text-slate-600 space-y-4 text-left max-w-lg mx-auto font-medium">
               <li className="flex items-start gap-3"><span className="text-orange-500 text-xl font-bold">✓</span> 作業時間・面積に応じて事前にお見積り</li>
-              <li className="flex items-start gap-3"><span className="text-orange-500 text-xl font-bold">✓</span> 草の処分費は別途（持ち帰りご希望の場合）</li>
               <li className="flex items-start gap-3">
                 <span className="text-orange-500 text-xl font-bold">✓</span> 
                 <span>
