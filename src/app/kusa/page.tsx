@@ -10,7 +10,31 @@ export const metadata: Metadata = {
 
 export default function GrassCuttingPage() {
   const phoneNumber = '080-9972-2393';
+  const telLink = 'tel:08099722393';
   const greeting = 'こんにちは、お茶の間レスキュー隊伊藤です。';
+
+  const reviews = [
+    {
+      name: 'トシ 様',
+      text: '急ですがタイヤ交換をお願いしました。前の大雪時にも雪かきが間に合わず困っていたところ、本当に助けていただきました。スピーディーなのに丁寧で、仕上がりも大満足です。'
+    },
+    {
+      name: '田口岬 様',
+      text: 'お話を聞かせて頂き、活気あふれる心温まる大変良い方で、街の人々のお困り事のために県内どこまでも東奔西走されています。応援しています。'
+    },
+    {
+      name: '市毛幸喜 様',
+      text: '部屋の片付けを頼みました。事前にYoutubeなどでお顔を拝見してたので安心して依頼できました。仕事も会話もテキパキとした好青年という印象でした。'
+    },
+    {
+      name: 'たか 様',
+      text: '車のタイヤ交換をお願いしました。ガソリンスタンド勤務ということもありとても手際のいい作業でした。'
+    },
+    {
+      name: '小武樹 様',
+      text: 'パンクした為、急遽連絡して対応していただけたので、大変助かりました！作業も早く最後の仕上げも一緒に確認してもらえたので安心です！'
+    }
+  ];
 
   return (
     <div className="w-full flex-grow flex flex-col pt-0 font-sans">
@@ -28,9 +52,9 @@ export default function GrassCuttingPage() {
             最短即日対応。お見積り無料です。
           </p>
           <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl inline-block mb-8">
-            <p className="text-2xl md:text-3xl font-bold flex items-center justify-center gap-2">
+            <a href={telLink} className="text-2xl md:text-3xl font-bold flex items-center justify-center gap-2 hover:opacity-80 transition-opacity">
               <span className="text-3xl">📞</span> {phoneNumber}
-            </p>
+            </a>
           </div>
         </div>
       </section>
@@ -49,9 +73,13 @@ export default function GrassCuttingPage() {
             </div>
             <div>
               <h2 className="text-3xl font-bold mb-4">{greeting}</h2>
-              <p className="text-lg leading-relaxed">
+              <p className="text-lg leading-relaxed mb-4">
                 お庭の雑草でお困りではありませんか？「暑くて作業ができない」「腰が痛くて」「忙しくて手が回らない」など、どんな理由でも構いません。私たちが責任を持って、あなたのお庭をスッキリ綺麗に仕上げます！
               </p>
+              <div className="bg-white/20 p-4 rounded-xl border border-white/30">
+                <p className="font-bold">【強み】ガソリンスタンドでの7年間の勤務経験あり</p>
+                <p className="text-sm mt-1 opacity-90">手際の良さと丁寧な対応には自信があります！体力仕事もお任せください。</p>
+              </div>
             </div>
           </div>
         </div>
@@ -108,18 +136,15 @@ export default function GrassCuttingPage() {
 
       {/* Reviews Section - Orange */}
       <section className="py-20 bg-orange-100">
-        <div className="container mx-auto px-4 max-w-5xl text-center">
+        <div className="container mx-auto px-4 max-w-6xl text-center">
           <h2 className="text-3xl md:text-4xl font-extrabold text-slate-800 mb-12">お客様の声</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              { name: 'Sさん', text: '丁寧な草刈りで、見違えるように綺麗になりました！' },
-              { name: 'Kさん', text: '暑い中、長時間作業していただき本当に助かりました。' },
-              { name: 'Mさん', text: '即日で対応してくれて助かりました！料金も良心的です。' }
-            ].map((review, i) => (
-              <div key={i} className="bg-white rounded-2xl p-6 text-left shadow-md">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {reviews.map((review, i) => (
+              <div key={i} className="bg-white rounded-2xl p-6 text-left shadow-md flex flex-col">
                 <div className="text-yellow-400 mb-2">★★★★★</div>
                 <p className="font-bold mb-2">{review.name}</p>
-                <p className="text-slate-600 text-sm">"{review.text}"</p>
+                <p className="text-slate-600 text-sm flex-grow mb-4 leading-relaxed">"{review.text}"</p>
+                <p className="text-[10px] text-slate-400 mt-auto border-t pt-2">Googleマップの口コミより引用</p>
               </div>
             ))}
           </div>
@@ -130,9 +155,9 @@ export default function GrassCuttingPage() {
       <section className="py-24 bg-green-600 text-white text-center">
         <div className="container mx-auto px-4 max-w-3xl">
           <h2 className="text-3xl md:text-5xl font-extrabold mb-8">まずはお気軽にお電話ください！</h2>
-          <p className="text-2xl md:text-4xl font-black mb-12 bg-white text-green-700 py-6 rounded-3xl shadow-2xl inline-block px-10">
+          <a href={telLink} className="text-2xl md:text-4xl font-black mb-12 bg-white text-green-700 py-6 rounded-3xl shadow-2xl inline-block px-10 hover:bg-green-50 transition-colors">
             📞 {phoneNumber}
-          </p>
+          </a>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white text-xl py-8 px-12 rounded-2xl shadow-xl font-bold" asChild>
               <Link href="/contact">メールでお問い合わせ</Link>
