@@ -4,14 +4,13 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/Button';
 
 export const metadata: Metadata = {
-  title: '新潟市の草刈り・草むしりは「お茶の間レスキュー隊」へ！最短即日・お見積り無料',
-  description: '新潟市の草刈り、草取りなどはお茶の間レスキュー隊にお任せください！最短即日対応、無料見積り、明朗会計で安心の実績。',
+  title: 'お茶の間レスキュー隊｜新潟県の草刈り・剪定・お庭の悩み解決｜最短即日対応',
+  description: '新潟県を中心に草刈りや剪定を最短即日で承ります。ガソリンスタンド勤務7年の確かな技術で、丁寧・迅速に対応。お見積り無料！お気軽にご相談ください。',
 };
 
 export default function KSPage() {
   const phoneNumber = '080-9972-2393';
   const telLink = 'tel:08099722393';
-  const greeting = 'こんにちは、お茶の間レスキュー隊伊藤です。';
 
   const reviews = [
     {
@@ -24,7 +23,7 @@ export default function KSPage() {
     },
     {
       name: '市毛幸喜 様',
-      text: '部屋の片付けを頼みました。事前にYoutubeなどでお顔を拝見してたので安心して依頼できました。仕事も会話もテキパキとした好青年という印象でした。'
+      text: '部屋の片付けを頼みました。事前にYoutubeなどでお顔を拝見してたので安心して依頼できました。仕事も会話もテキピキとした好青年という印象でした。'
     },
     {
       name: 'たか 様',
@@ -39,6 +38,9 @@ export default function KSPage() {
   return (
     <div className="w-full flex-grow flex flex-col pt-0 font-sans overflow-x-hidden">
       
+      {/* Hidden H1 for SEO */}
+      <h1 className="sr-only">新潟県の草刈り・剪定業者ならお茶の間レスキュー隊</h1>
+
       {/* --- RECREATED HERO BANNER --- */}
       <section className="relative w-full bg-[#f0f9f0] overflow-hidden">
         <div className="container mx-auto px-4 py-8 md:py-12 relative z-10">
@@ -47,21 +49,21 @@ export default function KSPage() {
             {/* Left Content Area */}
             <div className="w-full lg:w-[60%] text-center lg:text-left">
               {/* Main Headline */}
-              <h1 className="text-[32px] sm:text-[44px] md:text-[56px] lg:text-[64px] font-black leading-tight mb-2 tracking-tighter drop-shadow-[2px_2px_0px_rgba(255,255,255,1)]">
+              <p className="text-[32px] sm:text-[44px] md:text-[56px] lg:text-[64px] font-black leading-tight mb-2 tracking-tighter drop-shadow-[2px_2px_0px_rgba(255,255,255,1)]">
                 <span className="text-[#f97316]" style={{ WebkitTextStroke: '1px white' }}>
                   お庭のトラブル、今すぐ解決！
                 </span>
-              </h1>
+              </p>
               
               {/* Sub Headline */}
               <p className="text-[#3a7d44] text-[15px] sm:text-[20px] md:text-[24px] font-bold mb-8 drop-shadow-[1px_1px_0px_rgba(255,255,255,0.8)]">
-                大変な草刈り・庭の手入れはプロにお任せください。<br className="hidden sm:block"/> 最短即日対応！
+                大変な草刈り・庭の手入れはプロにお任せください。<br className="hidden sm:block"/> 新潟県内、最短即日対応！
               </p>
 
               {/* Three Round Badges */}
               <div className="flex justify-center lg:justify-start gap-3 sm:gap-6 mb-10">
                 {[
-                  "地域密着・\n実績多数",
+                  "新潟県密着・\n実績多数",
                   "お見積り・\n完全無料",
                   "24時間・\n年中無休"
                 ].map((text, idx) => (
@@ -89,7 +91,7 @@ export default function KSPage() {
               <div className="relative w-full aspect-[4/3] sm:aspect-square rounded-[30px] sm:rounded-full overflow-hidden border-[6px] sm:border-[10px] border-white shadow-2xl z-0">
                 <Image 
                   src="/images/hero-main-fixed.jpg" 
-                  alt="草刈り作業" 
+                  alt="新潟県での草刈り作業風景" 
                   fill 
                   className="object-cover transform group-hover:scale-110 transition-transform duration-700"
                 />
@@ -118,7 +120,7 @@ export default function KSPage() {
             <div className="w-48 h-48 relative rounded-full overflow-hidden border-4 border-green-600 shadow-lg flex-shrink-0">
               <Image 
                 src="/images/ceo-portrait.jpg" 
-                alt="お茶の間レスキュー隊" 
+                alt="お茶の間レスキュー隊代表" 
                 fill 
                 className="object-cover"
               />
@@ -126,7 +128,7 @@ export default function KSPage() {
             <div>
               <h2 className="text-3xl font-bold mb-4 text-slate-800">こんにちは、お茶の間レスキュー隊です。</h2>
               <p className="text-lg leading-relaxed mb-4 text-slate-600 font-medium">
-                「暑くて作業ができない」「腰が痛くて」「忙しくて手が回らない」など、どんな理由でも構いません。お庭の雑草でお困りの際は、私たちにお任せください！
+                「暑くて作業ができない」「腰が痛くて」「忙しくて手が回らない」など、どんな理由でも構いません。新潟県のお庭の雑草でお困りの際は、私たちにお任せください！
               </p>
               <div className="bg-green-50 p-4 rounded-xl border border-green-200">
                 <p className="font-bold text-green-800">【強み】ガソリンスタンドでの7年間の勤務経験あり</p>
@@ -141,7 +143,7 @@ export default function KSPage() {
       <section className="py-20 bg-orange-50">
         <div className="container mx-auto px-4 max-w-4xl text-center">
           <h2 className="text-3xl md:text-4xl font-extrabold text-slate-800 mb-12">
-            分かりやすい料金設定
+            新潟県で安心の料金設定
           </h2>
           <div className="bg-white rounded-3xl p-8 md:p-12 shadow-xl border-2 border-orange-200">
             <p className="text-xl font-bold text-orange-600 mb-4">基本作業費（1時間あたり）</p>
@@ -168,7 +170,7 @@ export default function KSPage() {
       {/* Videos Section - Green (Alternating) */}
       <section className="py-20 bg-[#3a7d44] text-white">
         <div className="container mx-auto px-4 max-w-5xl text-center">
-          <h2 className="text-3xl md:text-4xl font-extrabold mb-12">作業風景を動画でチェック</h2>
+          <h2 className="text-3xl md:text-4xl font-extrabold mb-12">新潟県内での作業風景を動画でチェック</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="aspect-video rounded-3xl overflow-hidden bg-white/10 shadow-lg border-4 border-white/20">
               <iframe 
@@ -197,7 +199,7 @@ export default function KSPage() {
       {/* Reviews Section - Orange (Alternating) */}
       <section className="py-20 bg-orange-100">
         <div className="container mx-auto px-4 max-w-6xl text-center">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-slate-800 mb-12">お客様の声</h2>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-slate-800 mb-12">新潟県のお客様の声</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {reviews.map((review, i) => (
               <div key={i} className="bg-white rounded-2xl p-6 text-left shadow-md flex flex-col hover:-translate-y-1 transition-transform">
